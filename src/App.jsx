@@ -10,16 +10,19 @@ function App() {
             alt="card-front-img"
             className="card-front-img"
           />
-          <img
-            src="./images/card-logo.svg"
-            alt="card-front-img"
-            className="card-front-img"
-          />
-          <h2> 0000 0000 0000 0000</h2>
-          <div className="footer">
-            <p>JANE APPLESEED</p>
-            <p>00/00</p>
+          <div className="img-content">
+            <img
+              src="./images/card-logo.svg"
+              alt="card-front-img"
+              className="card-logo"
+            />
+            <p className="card-number"> 0000 0000 0000 0000</p>
+            <div className="footer">
+              <p>JANE APPLESEED</p>
+              <p>00/00</p>
+            </div>
           </div>
+
         </div>
         <div className="back-img-container">
           <img
@@ -46,27 +49,37 @@ function App() {
             id="cardNumber"
             placeholder="e.g. 1234 5678 9123 0000"
           />
-          <label htmlFor="expiryDate">EXP.DATE (MM/YY)</label>
-          <input
-            type="text"
-            name="expiryMonth"
-            id="expiryDate"
-            placeholder="MM"
-          />
-          <input
-            type="text"
-            name="expiryYear"
-            id="expiryDate"
-            placeholder="YY"
-          />
 
-          <label htmlFor="cvc"> CVC</label>
-          <input
-            type="text"
-            name="cvc"
-            id="cvc"
-            placeholder="e.g. 123"
-          />
+
+
+          <div className="dateCvcLabel-container">
+            <label htmlFor="expiryDate">EXP.DATE (MM/YY)</label>
+            <label htmlFor="cvc"> CVC</label>
+          </div>
+
+          <div className="dateCvcInput-container">
+            <input
+              type="text"
+              name="expiryMonth"
+              id="expiryDate"
+              placeholder="MM"
+            />
+            <input
+              type="text"
+              name="expiryYear"
+              id="expiryDate"
+              placeholder="YY"
+            />
+
+            <input
+              type="text"
+              name="cvc"
+              id="cvc"
+              className="cvc"
+              placeholder="e.g. 123"
+            />
+          </div>
+
           <button> Confirm</button>
         </form>
       </div>
