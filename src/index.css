@@ -1,6 +1,6 @@
 /* Style Panel Linear gradient */
 
-/* text growth issue in front img container when enlarging image*/
+/*EXP DATE CVC issue in form*/
 
 @font-face {
   font-family: "Space Grotesk Regular";
@@ -155,11 +155,11 @@ div form {
 }
 
 .dateCvcLabel-container {
-  gap: 2em;
+  gap: 1vw;
 }
 
 .dateCvcInput-container {
-  gap: 1em;
+  gap: 5%;
 }
 
 .dateCvcInput-container input {
@@ -208,19 +208,23 @@ form button {
   }
 
   .front-img-container .img-content .card-number {
-    font-size: 1.15rem;
+    font-size: 5vw;
   }
 
   .front-img-container .footer {
-    display: flex;
-    gap: 9em;
-    font-size: 0.65rem;
+    /* display: flex;
+    gap: 9em; */
+    font-size: 3vw;
   }
 
   .back-img-container {
     width: 75%;
     top: 20%;
     left: 3%;
+  }
+
+  .back-img-container .cvc {
+    font-size: 3.2vw;
   }
 
   .form-container {
@@ -232,14 +236,41 @@ form button {
     margin-left: 5%;
     width: 85%;
     margin-bottom: 2em;
+    font-size: 3.25vw;
   }
 
+  .dateCvcLabel-container {
+    gap: 4em;
+  }
 }
 
-@media screen and (min-width:700px) {
+@media screen and (max-width:1200px)and (min-width:700px) {
 
   .front-img-container,
   .back-img-container {
     width: 70%;
+  }
+
+  .front-img-container .img-content .card-number {
+    font-size: 4.5vw;
+  }
+
+  .front-img-container .footer {
+    /* display: flex;
+    gap: 9em; */
+    font-size: 2.8vw;
+  }
+
+
+  .dateCvcLabel-container {
+    gap: 1.75em;
+  }
+}
+
+
+@media screen and (max-width: 700px) and (min-width:475px) {
+
+  .dateCvcLabel-container {
+    gap: 3.2em;
   }
 }
