@@ -44,8 +44,7 @@ p {
 input {
   padding: 1em;
   margin-bottom: 1.5em;
-  border-radius: 5px;
-  border: 1px solid
+  border-radius: 10px;
 }
 
 label {
@@ -147,15 +146,22 @@ div form {
   width: 38%;
 }
 
+
+input:hover {
+  cursor: pointer;
+}
+
+.name,
 .cardNumber {
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
+.error-name,
 .error-cardNumber {
   position: absolute;
-  color: red;
+  color: hsl(0, 100%, 66%);
   top: 80%;
   font-size: 0.7rem;
   margin: 0;
@@ -164,12 +170,11 @@ div form {
 }
 
 
-
 .errors {
   position: absolute;
   top: 70%;
   font-size: 0.7rem;
-  color: red;
+  color: hsl(0, 100%, 66%);
   margin: 0;
   padding: 0;
   margin-bottom: 2em;
@@ -194,7 +199,6 @@ div form {
 .dateCvcInput-container input {
   width: 15%;
 }
-
 
 .error-year {
   left: 28%;

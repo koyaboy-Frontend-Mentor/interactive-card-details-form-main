@@ -13,6 +13,8 @@ function App() {
     },
 
     validationSchema: Yup.object({
+      name: Yup.string()
+        .required("Name is required"),
       cardNumber: Yup.string()
         .required("Card number is required")
         .matches(/^[0-9\s]+$/, "Wrong format, numbers only")
@@ -32,11 +34,6 @@ function App() {
     }),
   })
 
-
-
-
-
-  console.log(formik.values)
   return (
     <main>
       <div className="style-panel">
@@ -66,21 +63,28 @@ function App() {
             alt="card-back-img"
             className="card-back-img"
           />
-
+          <p className="cvc">{formik.values.cvc}</p>
         </div>
       </div>
       <div className="form-container">
         <form>
-          <label htmlFor="name">CARDHOLDER NAME</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="e.g. Jane Appleseed"
-            onChange={formik.handleChange}
-            value={formik.values.name}
-            onBlur={formik.handleBlur}
-          />
+          <div className="name">
+            <label htmlFor="name">CARDHOLDER NAME</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              style={{
+                border: formik.touched.name && formik.errors.name ? " 1px solid hsl(0, 100%, 66%)" : formik.touched.name ? " 1px solid hsl(278, 94%, 30%)" : "1px solid hsla(249, 99%, 64%, 0.3)"
+              }}
+              placeholder="e.g. Jane Appleseed"
+              onChange={formik.handleChange}
+              value={formik.values.name}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.name && formik.errors.name ? <p className="error-name"> {formik.errors.name}</p> : null}
+          </div>
+
 
           <div className="cardNumber">
             <label htmlFor="cardNumber"> CARD NUMBER</label>
@@ -88,6 +92,9 @@ function App() {
               type="text"
               name="cardNumber"
               id="cardNumber"
+              style={{
+                border: formik.touched.cardNumber && formik.errors.cardNumber ? " 1px solid hsl(0, 100%, 66%)" : formik.touched.cardNumber ? " 1px solid hsl(278, 94%, 30%)" : "1px solid hsla(249, 99%, 64%, 0.3)"
+              }}
               placeholder="e.g. 1234 5678 9123 0000"
               onChange={formik.handleChange}
               value={formik.values.cardNumber}
@@ -108,6 +115,9 @@ function App() {
               type="text"
               name="expiryMonth"
               id="expiryDate"
+              style={{
+                border: formik.touched.expiryMonth && formik.errors.expiryMonth ? " 1px solid hsl(0, 100%, 66%)" : formik.touched.expiryMonth ? " 1px solid hsl(278, 94%, 30%)" : "1px solid hsla(249, 99%, 64%, 0.3)"
+              }}
               placeholder="MM"
               onChange={formik.handleChange}
               value={formik.values.expiryMonth}
@@ -119,6 +129,9 @@ function App() {
               type="text"
               name="expiryYear"
               id="expiryDate"
+              style={{
+                border: formik.touched.expiryYear && formik.errors.expiryYear ? " 1px solid hsl(0, 100%, 66%)" : formik.touched.expiryYear ? " 1px solid hsl(278, 94%, 30%)" : "1px solid hsla(249, 99%, 64%, 0.3)"
+              }}
               placeholder="YY"
               onChange={formik.handleChange}
               value={formik.values.expiryYear}
@@ -131,6 +144,9 @@ function App() {
               name="cvc"
               id="cvc"
               className="cvc"
+              style={{
+                border: formik.touched.cvc && formik.errors.cvc ? " 1px solid hsl(0, 100%, 66%)" : formik.touched.cvc ? " 1px solid hsl(278, 94%, 30%)" : "1px solid hsla(249, 99%, 64%, 0.3)"
+              }}
               placeholder="e.g. 123"
               onChange={formik.handleChange}
               value={formik.values.cvc}
@@ -139,58 +155,6 @@ function App() {
             {formik.touched.cvc && formik.errors.cvc ? <p className="errors error-cvc">{formik.errors.cvc}</p> : null}
 
           </div>
-
-
-
-
-
-
-
-          {/* <div className="date-cvc">
-            <div className="one">
-              <label htmlFor="expiryDate">EXP.DATE (MM/YY)</label>
-              <div className="input">
-                <input
-                  type="text"
-                  name="expiryMonth"
-                  id="expiryDate"
-                  placeholder="MM"
-                  onChange={formik.handleChange}
-                  value={formik.values.expiryMonth}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.touched.expiryMonth && formik.errors.expiryMonth ? <p className="errors">{formik.errors.expiryMonth}</p> : null}
-
-                <input
-                  type="text"
-                  name="expiryYear"
-                  id="expiryDate"
-                  placeholder="YY"
-                  onChange={formik.handleChange}
-                  value={formik.values.expiryYear}
-                  onBlur={formik.handleBlur}
-                />
-                {formik.touched.expiryYear && formik.errors.expiryYear ? <p className="errors">{formik.errors.expiryYear}</p> : null}
-
-              </div>
-
-            </div>
-
-            <div className="three">
-              <label htmlFor="cvc"> CVC</label>
-              <input
-                type="number"
-                name="cvc"
-                id="cvc"
-                className="cvc"
-                placeholder="e.g. 123"
-                onChange={formik.handleChange}
-                value={formik.values.cvc}
-              />
-              {formik.touched.cvc && formik.errors.cvc ? <p className="errors">{formik.errors.cvc}</p> : null}
-            </div>
-
-          </div> */}
 
           <button> Confirm</button>
         </form>
