@@ -146,7 +146,6 @@ div form {
   width: 38%;
 }
 
-
 input:hover {
   cursor: pointer;
 }
@@ -212,11 +211,43 @@ input:hover {
   flex-grow: 1;
 }
 
-form button {
+form button,
+.thankYou-container button {
   background-color: hsl(278, 68%, 11%);
   color: white;
   padding: 1em 0;
   border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.thankYou-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1em;
+}
+
+.thankYou-container img,
+.thankYou-container p {
+  margin-bottom: 1.35em;
+}
+
+.thankYou-container h2 {
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+
+.thankYou-container p {
+  color: hsla(279, 6%, 55%, 1);
+}
+
+.thankYou-container button {
+  width: 40%;
+  margin-bottom: 5em;
+  border: none;
 }
 
 /*Responsive*/
@@ -291,6 +322,11 @@ form button {
 
   .error-cvc {
     left: 51%;
+  }
+
+
+  .thankYou-container button {
+    width: 90%;
   }
 }
 

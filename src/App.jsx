@@ -1,8 +1,13 @@
 import "./index.css"
 import { useFormik } from "formik";
 import * as Yup from "yup"
+import ThankYouPage from "./components/ThankYouPage";
+import { useState } from "react";
+
+
 function App() {
 
+  const [submitted, setSubmitted] = useState(false)
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -32,6 +37,10 @@ function App() {
       cvc: Yup.number()
         .required("Can't be blank")
     }),
+
+    onSubmit: (values) => {
+      setSubmitted(true)
+    }
   })
 
   return (
@@ -66,8 +75,10 @@ function App() {
           <p className="cvc">{formik.values.cvc}</p>
         </div>
       </div>
-      <div className="form-container">
-        <form>
+
+
+      {submitted ? <ThankYouPage /> : <div className="form-container">
+        <form onSubmit={formik.handleSubmit}>
           <div className="name">
             <label htmlFor="name">CARDHOLDER NAME</label>
             <input
@@ -159,6 +170,9 @@ function App() {
           <button> Confirm</button>
         </form>
       </div>
+
+      }
+
     </main>
   );
 }
