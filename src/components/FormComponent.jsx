@@ -95,7 +95,7 @@ export default function FormComponent(props) {
 
                 </div>
 
-                <button> <Link to="/confirmationPage"> Confirm</Link></button>
+                <button> Confirm</button>
             </form>
         </div>
     )
