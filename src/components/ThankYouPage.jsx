@@ -1,9 +1,14 @@
 import React from "react";
+// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export default function ThankYouPage() {
 
+export default function ThankYouPage(props) {
+    const { formik } = props
+    const nav = useNavigate()
     const handleClick = () => {
-        console.log('2')
+        formik.resetForm();
+        nav("/")
     }
     return (
         <div className="thankYou-container">

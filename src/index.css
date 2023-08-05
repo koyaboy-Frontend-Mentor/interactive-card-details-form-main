@@ -41,6 +41,11 @@ p {
   padding: 0
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 input {
   padding: 1em;
   margin-bottom: 1.5em;
