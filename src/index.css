@@ -1,0 +1,367 @@
+/* Style Panel Linear gradient */
+
+/*EXP DATE CVC issue in form*/
+
+@font-face {
+  font-family: "Space Grotesk Regular";
+  src: url("fonts/Space_Grotesk/static/SpaceGrotesk-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Space Grotesk Medium";
+  src: url("fonts/Space_Grotesk/static/SpaceGrotesk-Medium.ttf");
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  max-width: 1440px;
+  font-size: 18px;
+  font-family: "Space Grotesk Medium";
+
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+input {
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border-radius: 10px;
+}
+
+label {
+  margin-bottom: 0.2em;
+  letter-spacing: 0.1em;
+}
+
+/* ACTUAL STYLES */
+
+main {
+  display: flex;
+
+}
+
+.style-panel {
+  min-height: 100vh;
+  background-color: hsl(278, 68%, 11%);
+  width: 35%;
+  position: relative;
+  font-family: "Space Grotesk Regular";
+}
+
+.front-img-container {
+  position: relative;
+  margin-bottom: 2em;
+  top: 5em;
+  left: 6em;
+  max-width: 100%;
+
+}
+
+.front-img-container .card-front-img {
+  width: 100%;
+}
+
+.front-img-container .img-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  padding-left: 1em;
+  color: white;
+  letter-spacing: 0.1em;
+}
+
+.front-img-container .img-content .card-logo {
+  width: 20%;
+  margin-bottom: 2em;
+}
+
+.front-img-container .img-content .card-number {
+  font-size: 1.35rem;
+}
+
+.front-img-container .footer {
+  display: flex;
+  gap: 9em;
+  font-size: 0.8rem;
+}
+
+.back-img-container {
+  position: relative;
+  top: 5em;
+  left: 10em;
+}
+
+.back-img-container .card-back-img {
+  width: 100%;
+}
+
+.back-img-container .cvc {
+  position: absolute;
+  /* top: 6.5em;
+  left: 20em; */
+  top: 48%;
+  /* Position the CVC 50% from the top */
+  left: 85%;
+  /* Position the CVC 50% from the left */
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.8rem;
+
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+div form {
+  display: flex;
+  flex-direction: column;
+  width: 38%;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+.name,
+.cardNumber {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.error-name,
+.error-cardNumber {
+  position: absolute;
+  color: hsl(0, 100%, 66%);
+  top: 80%;
+  font-size: 0.7rem;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2em;
+}
+
+
+.errors {
+  position: absolute;
+  top: 70%;
+  font-size: 0.7rem;
+  color: hsl(0, 100%, 66%);
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2em;
+}
+
+.dateCvcLabel-container,
+.dateCvcInput-container {
+  display: flex;
+  width: 100%;
+
+}
+
+.dateCvcLabel-container {
+  gap: 1vw;
+}
+
+.dateCvcInput-container {
+  gap: 5%;
+  position: relative;
+}
+
+.dateCvcInput-container input {
+  width: 15%;
+}
+
+.error-year {
+  left: 28%;
+}
+
+.error-cvc {
+  left: 56%;
+}
+
+.cvc {
+  flex-grow: 1;
+}
+
+form button,
+.thankYou-container button {
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  padding: 1em 0;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.thankYou-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1em;
+}
+
+.thankYou-container img,
+.thankYou-container p {
+  margin-bottom: 1.35em;
+}
+
+.thankYou-container h2 {
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+
+.thankYou-container p {
+  color: hsla(279, 6%, 55%, 1);
+}
+
+.thankYou-container button {
+  width: 40%;
+  margin-bottom: 5em;
+  border: none;
+}
+
+/*Responsive*/
+
+@media screen and (max-width:1200px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .style-panel {
+    width: 100vw;
+    display: flex;
+    min-height: 35vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5% 0;
+    padding-bottom: 10%;
+
+    margin-bottom: 20%;
+  }
+
+  .front-img-container {
+    position: absolute;
+    width: 75%;
+    z-index: 2;
+    top: 49.5%;
+    left: 5%;
+  }
+
+  .front-img-container .img-content .card-number {
+    font-size: 5vw;
+  }
+
+  .front-img-container .footer {
+    /* display: flex;
+    gap: 9em; */
+    font-size: 3vw;
+  }
+
+  .back-img-container {
+    width: 75%;
+    top: 20%;
+    left: 3%;
+  }
+
+  .back-img-container .cvc {
+    font-size: 3.2vw;
+  }
+
+  .form-container {
+    justify-content: flex-start;
+
+  }
+
+  .form-container form {
+    margin-left: 5%;
+    width: 85%;
+    margin-bottom: 2em;
+    font-size: 3.25vw;
+  }
+
+  .dateCvcLabel-container {
+    gap: 4em;
+  }
+
+  .error-year {
+    left: 25.5%;
+  }
+
+  .error-cvc {
+    left: 51%;
+  }
+
+
+  .thankYou-container button {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width:1200px)and (min-width:700px) {
+
+  .front-img-container,
+  .back-img-container {
+    width: 70%;
+  }
+
+  .front-img-container .img-content .card-number {
+    font-size: 4.5vw;
+  }
+
+  .front-img-container .footer {
+    /* display: flex;
+    gap: 9em; */
+    font-size: 2.8vw;
+  }
+
+
+  .dateCvcLabel-container {
+    gap: 1.75em;
+  }
+}
+
+
+@media screen and (max-width: 700px) and (min-width:475px) {
+
+  .dateCvcLabel-container {
+    gap: 3.2em;
+  }
+}
